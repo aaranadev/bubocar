@@ -6,7 +6,7 @@ import logo from './logo.svg'
 import './App.css'
 import {
   // Description,
-  Description2
+  // Description2
 } from './Description'
 
 class App extends Component {
@@ -19,7 +19,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Description2 />
+        {/* <Description2 /> */}
+        <button onClick={() => props.actions.add(props.app.todo.length)}>Add</button>
       </div>
     )
   }
