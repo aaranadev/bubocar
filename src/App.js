@@ -28,12 +28,21 @@ class App extends Component {
             <span className="span">What's my ip?</span>
             <span className="span">{props.app.data.ip}</span>
           </div>
-          <button
-            className="addButton"
-            onClick={() => props.actions.add(props.app.todo.length)}
-          >
-            Add Todo
-          </button>
+          <div className="todoContainer">
+            <button
+              className="addButton"
+              onClick={() => props.actions.add(props.app.todo.length)}
+            >
+              Add Todo
+            </button>
+            <div className="todos">
+              {
+                props.app.todo.map(value => (
+                  <div className="todo">{value}</div>
+                ))
+              }
+            </div>
+          </div>
         </div>
         {/* <Description2 /> */}
       </div>

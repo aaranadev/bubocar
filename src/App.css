@@ -27,8 +27,12 @@
 
 }
 
-.addButton {
+.todoContainer {
   margin-top: 20px;
+}
+
+.addButton {
+  margin-bottom: 20px;
 }
 
 .ip {
