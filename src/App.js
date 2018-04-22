@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import
-    // Description,
-    {Description2}
-from './Description'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import logo from './logo.svg'
+import './App.css'
+import {
+  // Description,
+  Description2
+} from './Description'
 
 class App extends Component {
   render() {
+    const { props } = this
+
     return (
       <div className="App">
         <header className="App-header">
@@ -16,8 +20,22 @@ class App extends Component {
         </header>
         <Description2 />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    app: state.app,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(
+      dispatch
+    )
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
