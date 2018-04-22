@@ -22,6 +22,24 @@
   font-size: large;
 }
 
+.container {
+  padding-top: 20px;
+
+}
+
+.addButton {
+  margin-top: 20px;
+}
+
+.ip {
+  display: flex;
+  justify-content: center;
+}
+
+.span {
+  margin: 0 4px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

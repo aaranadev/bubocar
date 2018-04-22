@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { add } from './actions'
+import { add, getData } from './actions'
 import logo from './logo.svg'
 import './App.css'
 import {
@@ -10,6 +10,10 @@ import {
 } from './Description'
 
 class App extends Component {
+  componentDidMount() {
+    this.props.actions.getData()
+  }
+
   render() {
     const { props } = this
 
@@ -19,8 +23,19 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <div className="container">
+          <div className="ip">
+            <span className="span">What's my ip?</span>
+            <span className="span">{props.app.data.ip}</span>
+          </div>
+          <button
+            className="addButton"
+            onClick={() => props.actions.add(props.app.todo.length)}
+          >
+            Add Todo
+          </button>
+        </div>
         {/* <Description2 /> */}
-        <button onClick={() => props.actions.add(props.app.todo.length)}>Add</button>
       </div>
     )
   }
@@ -37,6 +52,7 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(
       {
         add,
+        getData,
       },
       dispatch
     )
