@@ -1,4 +1,4 @@
-export const CHANGE = 'ADD'
+export const CHANGE = 'CHANGE'
 
 export const change = (data, name) => {
   return (dispatch, getState) => {
