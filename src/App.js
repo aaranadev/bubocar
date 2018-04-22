@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { add } from './actions'
 import logo from './logo.svg'
 import './App.css'
 import {
@@ -33,6 +34,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(
+      {
+        add,
+      },
       dispatch
     )
   }
