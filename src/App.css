@@ -24,7 +24,8 @@
 
 .container {
   padding-top: 20px;
-
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .todoContainer {
