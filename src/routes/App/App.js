@@ -10,7 +10,7 @@ import './App.css'
 import {
   Form,
   Mirror,
-} from './Forms'
+} from '../../components/Forms'
 
 class App extends Component {
   componentDidMount() {

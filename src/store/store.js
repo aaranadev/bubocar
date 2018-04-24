@@ -6,8 +6,9 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 import makeRootReducer from '../reducers'
 import logger from 'redux-logger'
+import { routerMiddleware } from 'react-router-redux'
 
-function configureStore(initialState = {}) {
+function configureStore(history, initialState = {}) {
   // ======================================================
   // Middleware Configuration
   // ======================================================
@@ -36,6 +37,7 @@ function configureStore(initialState = {}) {
     composeEnhancers(
       applyMiddleware(
         ...middleware,
+         routerMiddleware(history),
       ),
       ...enhancers,
     ),

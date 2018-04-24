@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import appReducer from '../reducer'
-import formReducer from '../Forms/reducer'
+import globalReducer from './globalReducer'
+import formReducer from '../components/Forms/reducer'
 
 export const makeRootReducer = asyncReducers => combineReducers({
-  app: appReducer,
+  global: globalReducer,
   form: formReducer,
   ...asyncReducers,
 })
